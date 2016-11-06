@@ -26,3 +26,5 @@ class Discrete(gym.Space):
         return "Discrete(%d)" % self.n
     def __eq__(self, other):
         return self.n == other.n
+    def to_jsonable(self, sample_n):
+        return np.array(sample_n).tolist()
